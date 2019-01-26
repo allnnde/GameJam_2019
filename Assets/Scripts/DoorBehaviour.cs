@@ -24,7 +24,9 @@ public class DoorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(isActive){
+
             door.transform.position = Vector3.Lerp(door.transform.position, target, Time.deltaTime * speed);
             if(Vector3.Distance(door.transform.position, target) < 0.1f){
                 isActive = false;

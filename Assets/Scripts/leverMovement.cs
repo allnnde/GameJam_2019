@@ -8,7 +8,7 @@ public class leverMovement : MonoBehaviour
     public float speed = 1;
     public bool isActive = false;
 
-    public Vector3 targetAngle = new Vector3(90f, 0f, 0f);
+    public Vector3 targetAngle = new Vector3(-90f, 0f, 0f);
     public GameObject[] objectsToActive;
     private Vector3 currentAngle;
 
@@ -23,19 +23,17 @@ public class leverMovement : MonoBehaviour
     void Update()
     {
         if(isActive){
-            currentAngle = new Vector3(
-             Mathf.LerpAngle(currentAngle.x, targetAngle.x, Time.deltaTime * speed),
-             Mathf.LerpAngle(currentAngle.y, targetAngle.y, Time.deltaTime * speed),
-             Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * speed));
-            leverPivot.transform.eulerAngles = currentAngle;
+            leverPivot.transform.localEulerAngles = new Vector3(-90f, 180, 90);
         }
+        isActive = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player" && Input.GetKeyDown(KeyCode.E)){
             foreach(GameObject obj in objectsToActive){
-                obj.GetComponent<DoorBehaviour>().ActivateDoor();
+                if(!obj.GetComponent<DoorBehaviour>().isActive)
+                    obj.GetComponent<DoorBehaviour>().ActivateDoor();
             }
             isActive = true;
         }
