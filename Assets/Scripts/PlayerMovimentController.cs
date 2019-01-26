@@ -18,7 +18,6 @@ public class PlayerMovimentController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         _anim = GetComponentInChildren<Animator>();
         _modelo = transform.GetChild(0);
-
     }
 
     void Start()
