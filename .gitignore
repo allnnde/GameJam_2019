@@ -46,3 +46,5 @@ Assets/StreamingAssets/crashlytics-build.properties
 
 
 # End of https://www.gitignore.io/api/unity
+.vscode/settings.json
+.gitignore
