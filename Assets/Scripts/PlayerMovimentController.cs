@@ -6,7 +6,13 @@ public class PlayerMovimentController : MonoBehaviour
 
     private Vector3 _forward;
     private Vector3 _right;
+    private Animator _anim;
 
+
+    private void Awake()
+    {
+        _anim = GetComponent<Animator>();
+    }
     // Use this for initialization
     void Start()
     {
@@ -22,17 +28,18 @@ public class PlayerMovimentController : MonoBehaviour
         var mHorizontal = Input.GetAxis("Horizontal");
         var mVertical = Input.GetAxis("Vertical");
 
-        if (mHorizontal != 0 || mVertical != 0)
+        var enMovimiento = mHorizontal != 0 || mVertical != 0;
+
+        if (enMovimiento)
         {
-            Vector3 rightMoviment = _right * VelocidadMovimiento * Time.deltaTime * mHorizontal;
-            Vector3 upMoviment = _forward * VelocidadMovimiento * Time.deltaTime * mVertical;
+            var rightMoviment = _right * VelocidadMovimiento * Time.deltaTime * mHorizontal;
+            var upMoviment = _forward * VelocidadMovimiento * Time.deltaTime * mVertical;
 
-            var heading = Vector3.Normalize(rightMoviment + upMoviment);
-
-            transform.forward = heading;
+            transform.forward = Vector3.Normalize(rightMoviment + upMoviment);
             transform.position += rightMoviment;
             transform.position += upMoviment;
         }
+        _anim.SetBool("Walking", enMovimiento);
 
     }
 }
