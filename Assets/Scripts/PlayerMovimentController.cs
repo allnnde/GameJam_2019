@@ -2,44 +2,46 @@
 
 public class PlayerMovimentController : MonoBehaviour
 {
-    public float VelocidadMovimiento = 6f;
+    public float speed = 6.0f;
+    public float jumpSpeed = 8.0f;
+    public float gravity = 20.0f;
 
-    private Vector3 _forward;
-    private Vector3 _right;
+    private Vector3 moveDirection = Vector3.zero;
+    private CharacterController controller;
     private Animator _anim;
 
-
-    private void Awake()
-    {
-        _anim = GetComponent<Animator>();
-    }
-    // Use this for initialization
     void Start()
     {
-        _forward = Camera.main.transform.forward;
-        _forward.y = 0;
-        _forward = Vector3.Normalize(_forward);
-        _right = Quaternion.Euler(new Vector3(0, 90, 0)) * _forward;
+        controller = GetComponent<CharacterController>();
+
+        // let the gameObject fall down
+        gameObject.transform.position = new Vector3(0, 5, 0);
+        _anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        var mHorizontal = Input.GetAxis("Horizontal");
+
+        var mHorizaontal = Input.GetAxis("Horizontal");
         var mVertical = Input.GetAxis("Vertical");
 
-        var enMovimiento = mHorizontal != 0 || mVertical != 0;
-
-        if (enMovimiento)
+        if (controller.isGrounded)
         {
-            var rightMoviment = _right * VelocidadMovimiento * Time.deltaTime * mHorizontal;
-            var upMoviment = _forward * VelocidadMovimiento * Time.deltaTime * mVertical;
+            // We are grounded, so recalculate
+            // move direction directly from axes
+            moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;           
 
-            transform.forward = Vector3.Normalize(rightMoviment + upMoviment);
-            transform.position += rightMoviment;
-            transform.position += upMoviment;
         }
-        _anim.SetBool("Walking", enMovimiento);
 
+        // Apply gravity
+        moveDirection.y -= (gravity * Time.deltaTime);
+
+        // Move the controller
+        controller.Move(moveDirection * Time.deltaTime);
+
+
+        _anim.SetBool("Walking", mHorizaontal  != 0 || mVertical != 0);
     }
 }
