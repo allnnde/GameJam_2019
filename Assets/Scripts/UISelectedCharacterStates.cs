@@ -26,8 +26,8 @@ public class UISelectedCharacterStates : MonoBehaviour
         }
         if(s == BadgeStates.selected){
             states = BadgeStates.selected;
-            transform.localScale = new Vector3(1.5f, 1.5f, 1);
             this.GetComponent<Image>().sprite = charImage;
+            transform.localScale = new Vector3(1.5f, 1.5f, 1);
         }
     }
 }
