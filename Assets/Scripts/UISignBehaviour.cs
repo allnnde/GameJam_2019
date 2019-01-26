@@ -14,9 +14,4 @@ public class UISignBehaviour : MonoBehaviour
         float ratio = sizeInUnits / canvas.GetComponent<RectTransform>().rect.width;
         transform.localScale = new Vector3(ratio,ratio,ratio);
     }
-    void Update () {
-        
-    }
-
-
 }

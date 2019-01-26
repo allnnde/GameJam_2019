@@ -3,6 +3,77 @@ guid: fa1334f74058db34b89bf853c5fbe0c0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: Armature
+    100002: Back
+    100004: BackFoot_L
+    100006: BackFoot_R
+    100008: BackLeg_L
+    100010: BackLeg_R
+    100012: BackLowLeg_L
+    100014: BackLowLeg_R
+    100016: BackUpLeg_L
+    100018: BackUpLeg_R
+    100020: Body
+    100022: Cylinder
+    100024: Cylinder_001
+    100026: //RootNode
+    100028: FrontFoot_L
+    100030: FrontFoot_R
+    100032: FrontLeg_L
+    100034: FrontLeg_R
+    100036: FrontLowLeg_L
+    100038: FrontLowLeg_R
+    100040: FrontUpLeg_L
+    100042: FrontUpLeg_R
+    100044: Head
+    100046: Hips
+    100048: Neck
+    100050: root
+    100052: Shoulders
+    100054: Torso
+    400000: Armature
+    400002: Back
+    400004: BackFoot_L
+    400006: BackFoot_R
+    400008: BackLeg_L
+    400010: BackLeg_R
+    400012: BackLowLeg_L
+    400014: BackLowLeg_R
+    400016: BackUpLeg_L
+    400018: BackUpLeg_R
+    400020: Body
+    400022: Cylinder
+    400024: Cylinder_001
+    400026: //RootNode
+    400028: FrontFoot_L
+    400030: FrontFoot_R
+    400032: FrontLeg_L
+    400034: FrontLeg_R
+    400036: FrontLowLeg_L
+    400038: FrontLowLeg_R
+    400040: FrontUpLeg_L
+    400042: FrontUpLeg_R
+    400044: Head
+    400046: Hips
+    400048: Neck
+    400050: root
+    400052: Shoulders
+    400054: Torso
+    2100000: Brown
+    2100002: Belly
+    2100004: DarkBrown
+    2100006: LightBrown
+    2300000: Cylinder_001
+    3300000: Cylinder_001
+    4300000: Cylinder_001
+    4300002: Cylinder
+    7400000: Default Take
+    7400002: Death
+    7400004: Father_Attack
+    7400006: Father_Idle
+    7400008: Father_Walk
+    9500000: //RootNode
+    13700000: Cylinder
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +128,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
