@@ -9,14 +9,20 @@ public class PlayerMovimentController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Animator _anim;
+    private Transform _modelo;
+
+    private void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+        _anim = GetComponentInChildren<Animator>();
+        _modelo = transform.GetChild(0);
+
+    }
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-
         // let the gameObject fall down
         gameObject.transform.position = new Vector3(0, 5, 0);
-        _anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -28,10 +34,15 @@ public class PlayerMovimentController : MonoBehaviour
         if (controller.isGrounded)
         {
             // We are grounded, so recalculate
+
             // move direction directly from axes
             moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
+
+            if (moveDirection != Vector3.zero)
+                _modelo.rotation = Quaternion.LookRotation(moveDirection);
+
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;           
+            moveDirection *= speed;          
 
         }
 
@@ -40,7 +51,6 @@ public class PlayerMovimentController : MonoBehaviour
 
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);
-
 
         _anim.SetBool("Walking", mHorizaontal  != 0 || mVertical != 0);
     }

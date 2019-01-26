@@ -24,15 +24,14 @@ public class PushObjectController : MonoBehaviour
     {
         
     }
-    private void OnCollisionStay(Collision collision)
+
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Debug.Log(other.tag);
+        if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
             _rigidbody.useGravity = true;
-            _rigidbody.isKinematic = false;
-
         }
     }
-
 
 }
