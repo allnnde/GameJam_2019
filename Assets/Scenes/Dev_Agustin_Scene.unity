@@ -543,6 +543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Father
       objectReference: {fileID: 0}
+    - target: {fileID: 6147836650330342336, guid: a19c86b14be3ab14b9ea10297d19b11d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6147836650330342341, guid: a19c86b14be3ab14b9ea10297d19b11d,
         type: 3}
       propertyPath: m_LocalPosition.x
