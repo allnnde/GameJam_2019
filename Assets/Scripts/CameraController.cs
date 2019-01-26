@@ -4,7 +4,9 @@ public class CameraController : MonoBehaviour
 {
 
     public GameObject Target;
+    public float CamaraAnguloX;
     public float CamaraAnguloY;
+
 
     public float smoothing = 5f;
 
@@ -18,7 +20,7 @@ public class CameraController : MonoBehaviour
 
     public void EnfocarAlPlayer()
     {
-        transform.rotation = Quaternion.Euler(30, CamaraAnguloY, 0);
+        transform.rotation = Quaternion.Euler(CamaraAnguloX, CamaraAnguloY, 0);
         _offset = transform.position - Target.transform.position;
     }
 
