@@ -12,7 +12,7 @@ public class PushObjectController : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         if (other.CompareTag("Pushable") && Input.GetKeyDown(KeyCode.E))
         {
             other.GetComponent<Rigidbody>().useGravity = true;

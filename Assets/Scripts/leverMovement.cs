@@ -31,12 +31,11 @@ public class leverMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player"){
+        if(other.tag == "Player" && Input.GetKeyDown(KeyCode.E)){
             foreach(GameObject obj in objectsToActive){
                 obj.GetComponent<DoorBehaviour>().ActivateDoor();
-                Debug.Log("HelloFriend");
             }
             isActive = true;
         }
