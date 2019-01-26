@@ -17,8 +17,7 @@ public class sinMovementObject : MonoBehaviour
     void Update()
     {
         float magnitude = amplitude*Mathf.Sin(freq * acumulatedTime);
-        transform.position += new Vector3(magnitude, 0f,0f);
-        Debug.Log(magnitude);
+        transform.position += new Vector3(0,magnitude,0);
         acumulatedTime += Time.deltaTime;
     }
 }
