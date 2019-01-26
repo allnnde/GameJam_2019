@@ -9,7 +9,7 @@ public class leverMovement : MonoBehaviour
     public bool isActive = false;
 
     public Vector3 targetAngle = new Vector3(90f, 0f, 0f);
- 
+    public GameObject[] objectsToActive;
     private Vector3 currentAngle;
 
     // Start is called before the first frame update
@@ -28,6 +28,17 @@ public class leverMovement : MonoBehaviour
              Mathf.LerpAngle(currentAngle.y, targetAngle.y, Time.deltaTime * speed),
              Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * speed));
             leverPivot.transform.eulerAngles = currentAngle;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player"){
+            foreach(GameObject obj in objectsToActive){
+                obj.GetComponent<DoorBehaviour>().ActivateDoor();
+                Debug.Log("HelloFriend");
+            }
+            isActive = true;
         }
     }
 }

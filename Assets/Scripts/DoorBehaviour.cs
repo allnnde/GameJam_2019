@@ -11,15 +11,12 @@ public class DoorBehaviour : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
 
-    public bool isActive = false;
-    bool shouldGoToPointB = true;
+    public bool isActive = true;
+    bool shouldGoToPointB = false;
 
     Vector3 target;
     void Start()
     {
-        if(Vector3.Distance(door.transform.position, pointA.transform.position) < Vector3.Distance(door.transform.position, pointB.transform.position)){
-            shouldGoToPointB = true;
-        }
         if(shouldGoToPointB) target = pointB.position;
         else target = pointA.position;
     }
@@ -27,6 +24,7 @@ public class DoorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Entra");
         if(isActive){
             door.transform.position = Vector3.Lerp(door.transform.position, target, Time.deltaTime * speed);
             if(Vector3.Distance(door.transform.position, target) < 0.1f){
@@ -40,5 +38,7 @@ public class DoorBehaviour : MonoBehaviour
         if(shouldGoToPointB) target = pointB.position;
         else target = pointA.position;
         isActive = true;
+        Debug.Log(isActive);
+        Debug.Log("Hello Deear");
     }
 }
