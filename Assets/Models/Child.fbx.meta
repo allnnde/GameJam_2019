@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 26e9716ecad3bcd4d894112e8593c44b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Back
+    100004: Back_end
+    100006: BackFoot.L
+    100008: BackFoot.L_end
+    100010: BackFoot.R
+    100012: BackFoot.R_end
+    100014: BackLeg.L
+    100016: BackLeg.R
+    100018: BackLowLeg.L
+    100020: BackLowLeg.L_end
+    100022: BackLowLeg.R
+    100024: BackLowLeg.R_end
+    100026: BackUpLeg.L
+    100028: BackUpLeg.R
+    100030: Body
+    100032: //RootNode
+    100034: Cylinder
+    100036: Cylinder.001
+    100038: FrontFoot.L
+    100040: FrontFoot.L_end
+    100042: FrontFoot.R
+    100044: FrontFoot.R_end
+    100046: FrontLeg.L
+    100048: FrontLeg.R
+    100050: FrontLowLeg.L
+    100052: FrontLowLeg.L_end
+    100054: FrontLowLeg.R
+    100056: FrontLowLeg.R_end
+    100058: FrontUpLeg.L
+    100060: FrontUpLeg.R
+    100062: Head
+    100064: Head_end
+    100066: Hips
+    100068: Neck
+    100070: root
+    100072: Shoulders
+    100074: Torso
+    100076: Torso_end
+    400000: Armature
+    400002: Back
+    400004: Back_end
+    400006: BackFoot.L
+    400008: BackFoot.L_end
+    400010: BackFoot.R
+    400012: BackFoot.R_end
+    400014: BackLeg.L
+    400016: BackLeg.R
+    400018: BackLowLeg.L
+    400020: BackLowLeg.L_end
+    400022: BackLowLeg.R
+    400024: BackLowLeg.R_end
+    400026: BackUpLeg.L
+    400028: BackUpLeg.R
+    400030: Body
+    400032: //RootNode
+    400034: Cylinder
+    400036: Cylinder.001
+    400038: FrontFoot.L
+    400040: FrontFoot.L_end
+    400042: FrontFoot.R
+    400044: FrontFoot.R_end
+    400046: FrontLeg.L
+    400048: FrontLeg.R
+    400050: FrontLowLeg.L
+    400052: FrontLowLeg.L_end
+    400054: FrontLowLeg.R
+    400056: FrontLowLeg.R_end
+    400058: FrontUpLeg.L
+    400060: FrontUpLeg.R
+    400062: Head
+    400064: Head_end
+    400066: Hips
+    400068: Neck
+    400070: root
+    400072: Shoulders
+    400074: Torso
+    400076: Torso_end
+    2100000: Brown
+    2100002: Belly
+    2100004: DarkBrown
+    2300000: Cylinder.001
+    3300000: Cylinder.001
+    4300000: Cylinder.001
+    4300002: Cylinder
+    7400000: Armature|Child_Attack
+    7400002: Armature|Child_Death
+    7400004: Armature|Child_Idle
+    7400006: Armature|Child_Jump
+    7400008: Armature|Child_Sneak
+    7400010: Armature|Child_Walk
+    9500000: //RootNode
+    13700000: Cylinder
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
