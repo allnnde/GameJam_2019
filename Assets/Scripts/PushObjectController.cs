@@ -7,7 +7,7 @@ public class PushObjectController : MonoBehaviour
 {
 
     Rigidbody _rigidbody;
-    public RigidbodyConstraints freesaa;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -26,10 +26,8 @@ public class PushObjectController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
         {
-
             _rigidbody.useGravity = true;
         }
     }
