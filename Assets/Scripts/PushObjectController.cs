@@ -1,36 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+
 public class PushObjectController : MonoBehaviour
 {
 
-    Rigidbody _rigidbody;
+    private Animator _anim;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _anim = GetComponentInChildren<Animator>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        _rigidbody.useGravity = false;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider other)
     {
         Debug.Log(other.tag);
-        if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
+        if (other.CompareTag("Pushable") && Input.GetKeyDown(KeyCode.E))
         {
-            _rigidbody.useGravity = true;
+            other.GetComponent<Rigidbody>().useGravity = true;
+
+            _anim.SetTrigger("UsingSkill");
         }
     }
 
