@@ -13,6 +13,8 @@ public class PlayerMovimentController : MonoBehaviour
 
     public bool Saltar { get; set; }
 
+    public bool isSelected;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -22,8 +24,6 @@ public class PlayerMovimentController : MonoBehaviour
 
     void Start()
     {
-        // let the gameObject fall down
-        gameObject.transform.position = new Vector3(0, 5, 0);
     }
 
     void Update()
@@ -32,15 +32,14 @@ public class PlayerMovimentController : MonoBehaviour
         var mHorizaontal = Input.GetAxis("Horizontal");
         var mVertical = Input.GetAxis("Vertical");
 
-        if (controller.isGrounded)
+        if (controller.isGrounded && isSelected)
         {
             // We are grounded, so recalculate
 
             // move direction directly from axes
             moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
 
-            if (moveDirection != Vector3.zero)
-                _modelo.rotation = Quaternion.LookRotation(moveDirection);
+            if (moveDirection != Vector3.zero) _modelo.rotation = Quaternion.LookRotation(moveDirection);
 
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
@@ -49,16 +48,15 @@ public class PlayerMovimentController : MonoBehaviour
                 moveDirection.y = jumpSpeed;
                 Saltar = false;
             }
-
-
         }
 
         // Apply gravity
         moveDirection.y -= (gravity * Time.deltaTime);
 
         // Move the controller
-        controller.Move(moveDirection * Time.deltaTime);
-
-        _anim.SetBool("Walking", mHorizaontal  != 0 || mVertical != 0);
+        if(isSelected) { 
+            controller.Move(moveDirection * Time.deltaTime);
+             _anim.SetBool("Walking", mHorizaontal  != 0 || mVertical != 0);
+        }
     }
 }

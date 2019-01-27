@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6147836650330342340}
   - component: {fileID: 1544232540659181477}
   - component: {fileID: 293004856}
+  - component: {fileID: 796596797582397328}
   m_Layer: 0
   m_Name: Father
   m_TagString: Player
@@ -110,6 +111,18 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 8
   gravity: 20
+--- !u!114 &796596797582397328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147836650330342336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c28bec8c23dd974e9342c5cc9fda62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6147836649714691799
 PrefabInstance:
   m_ObjectHideFlags: 0
