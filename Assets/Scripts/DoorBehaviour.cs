@@ -24,9 +24,7 @@ public class DoorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(isActive){
-
             door.transform.position = Vector3.Lerp(door.transform.position, target, Time.deltaTime * speed);
             if(Vector3.Distance(door.transform.position, target) < 0.1f){
                 isActive = false;
@@ -35,6 +33,7 @@ public class DoorBehaviour : MonoBehaviour
     }
 
     public void ActivateDoor(){
+        Debug.Log(this.gameObject.name);
         shouldGoToPointB = !shouldGoToPointB;
         if(shouldGoToPointB) target = pointB.position;
         else target = pointA.position;

@@ -11,4 +11,11 @@ public class FloorButtonBehaviour : MonoBehaviour
             targetObject.GetComponent<DoorBehaviour>().ActivateDoor();
         }
     }
+
+        private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player"){
+            targetObject.GetComponent<DoorBehaviour>().ActivateDoor();
+        }
+    }
 }
