@@ -13,6 +13,10 @@ public class PlayerMovimentController : MonoBehaviour
 
     public bool Saltar { get; set; }
 
+    public bool isSelected;
+
+    CharacterSoundManager csm;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -22,43 +26,43 @@ public class PlayerMovimentController : MonoBehaviour
 
     void Start()
     {
-        // let the gameObject fall down
-        gameObject.transform.position = new Vector3(0, 5, 0);
     }
 
     void Update()
     {
+        moveDirection = Vector3.zero;
+        float mHorizaontal = 0;
+        float mVertical = 0;
 
-        var mHorizaontal = Input.GetAxis("Horizontal");
-        var mVertical = Input.GetAxis("Vertical");
-
-        if (controller.isGrounded)
+        if (isSelected)
         {
-            // We are grounded, so recalculate
-
-            // move direction directly from axes
-            moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
-
-            if (moveDirection != Vector3.zero)
-                _modelo.rotation = Quaternion.LookRotation(moveDirection);
-
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-            if (Saltar)
-            {
-                moveDirection.y = jumpSpeed;
-                Saltar = false;
-            }
-
-
+            mHorizaontal = Input.GetAxis("Horizontal");
+            mVertical = Input.GetAxis("Vertical");
         }
+
+            if (controller.isGrounded)
+            {
+                // We are grounded, so recalculate
+                // move direction directly from axes
+                moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
+
+                if (moveDirection != Vector3.zero) _modelo.rotation = Quaternion.LookRotation(moveDirection);
+
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
+                if (Saltar)
+                {
+                    moveDirection.y = jumpSpeed;
+                    Saltar = false;
+                }
+            }
 
         // Apply gravity
         moveDirection.y -= (gravity * Time.deltaTime);
 
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);
-
-        _anim.SetBool("Walking", mHorizaontal  != 0 || mVertical != 0);
+        bool isWalking = mHorizaontal  != 0 || mVertical != 0;
+        _anim.SetBool("Walking", isWalking);
     }
 }

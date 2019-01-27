@@ -6,7 +6,7 @@ public class DoorBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject door;
-    public GameObject opositeDoor;
+    //public GameObject opositeDoor;
     public float speed;
     public Transform pointA;
     public Transform pointB;
