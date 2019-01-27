@@ -8,6 +8,7 @@ public class OverallSceneManager : MonoBehaviour
     public GameObject mother;
     public GameObject bambi;
     public GameObject cam;
+    public GameObject cnvsBadges;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class OverallSceneManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1) && father.gameObject.GetComponent<CharacterChangeManager>().canBeUsed){
             mother.GetComponent<JumpController>().enabled = false;
+            mother.GetComponent<PlayerMovimentController>().isSelected = false;
             mother.GetComponent<PlayerMovimentController>().isSelected = false;
             bambi.GetComponent<SneakController>().enabled = false;
             bambi.GetComponent<PlayerMovimentController>().isSelected = false;

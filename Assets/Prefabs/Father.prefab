@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6147836650330342341}
   - component: {fileID: 6147836650330342342}
-  - component: {fileID: 6147836650330342343}
-  - component: {fileID: 6147836650330342340}
+  - component: {fileID: 4740315717999841030}
   - component: {fileID: 1544232540659181477}
   - component: {fileID: 293004856}
   - component: {fileID: 796596797582397328}
+  - component: {fileID: 6147836650330342340}
   m_Layer: 0
   m_Name: Father
   m_TagString: Player
@@ -48,29 +48,14 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 6
-  m_SlopeLimit: 0
-  m_StepOffset: 0
+  m_Height: 4.27
+  m_Radius: 2.7
+  m_SlopeLimit: 65
+  m_StepOffset: 1
   m_SkinWidth: 0.5
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 6, z: 0}
---- !u!114 &6147836650330342343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6147836650330342336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d62d7ba8d916c74d9736cc099deb965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
-  gravity: 20
---- !u!136 &6147836650330342340
+  m_Center: {x: 0, y: 2.35, z: 0.46}
+--- !u!136 &4740315717999841030
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,10 +65,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 6
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 6, z: 0}
+  m_Radius: 1.45
+  m_Height: 3.87
+  m_Direction: 2
+  m_Center: {x: 0, y: 4.89, z: 3.39}
 --- !u!114 &1544232540659181477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpSpeed: 8
-  gravity: 20
+  gravity: 100
+  isSelected: 1
 --- !u!114 &796596797582397328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +109,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c28bec8c23dd974e9342c5cc9fda62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeUsed: 1
+--- !u!136 &6147836650330342340
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147836650330342336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.45
+  m_Height: 3.87
+  m_Direction: 2
+  m_Center: {x: 0, y: 4.89, z: 3.39}
 --- !u!1001 &6147836649714691799
 PrefabInstance:
   m_ObjectHideFlags: 0

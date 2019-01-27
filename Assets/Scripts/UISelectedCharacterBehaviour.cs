@@ -7,8 +7,6 @@ public class UISelectedCharacterBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public Image[] family;
-    public Image border;
-
     int currentlySelected = 0;
     void Start()
     {
@@ -21,6 +19,5 @@ public class UISelectedCharacterBehaviour : MonoBehaviour
         family[currentlySelected].GetComponent<UISelectedCharacterStates>().setState(BadgeStates.notSelected);
         currentlySelected = character;
         family[currentlySelected].GetComponent<UISelectedCharacterStates>().setState(BadgeStates.selected);
-        border.transform.position =  family[currentlySelected].GetComponent<Transform>().position;
     }
 }

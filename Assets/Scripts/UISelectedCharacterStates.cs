@@ -10,24 +10,27 @@ public enum BadgeStates{
 public class UISelectedCharacterStates : MonoBehaviour
 {
     public BadgeStates states;
-    public Sprite charImage;
-    public Sprite disabledImage;
+    public GameObject charImage;
+
 
     public void setState(BadgeStates s){
         if(s == BadgeStates.locked){
             states = BadgeStates.locked;
-            transform.localScale = new Vector3(1, 1, 1);
-            this.GetComponent<Image>().sprite = disabledImage;
+            this.GetComponent<Image>().color = new Color(255,255,255, 0);
+            var tempColor = charImage.GetComponent<Image>().color =  new Color(0,0,0, 10f);
+            tempColor.a = 0.3f;
+            charImage.GetComponent<Image>().color =  tempColor;
         }
-        if(s == BadgeStates.notSelected){
+        else if(s == BadgeStates.notSelected){
+            Debug.Log("Enters here");
             states = BadgeStates.notSelected;
-            transform.localScale = new Vector3(1, 1, 1);
-            this.GetComponent<Image>().sprite = charImage;
+            this.GetComponent<Image>().color = new Color(255,255,255, 0);
+            charImage.GetComponent<Image>().color =  new Color(255,255,255, 255);
         }
-        if(s == BadgeStates.selected){
+        else if(s == BadgeStates.selected){
             states = BadgeStates.selected;
-            this.GetComponent<Image>().sprite = charImage;
-            transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            this.GetComponent<Image>().color = new Color(255,255,255, 150);
+            charImage.GetComponent<Image>().color =  new Color(255,255,255, 255);
         }
     }
 }
