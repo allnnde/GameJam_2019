@@ -39,9 +39,15 @@ public class PlayerMovimentController : MonoBehaviour
             mHorizaontal = Input.GetAxis("Horizontal");
             mVertical = Input.GetAxis("Vertical");
         }
+                moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
 
+                if (moveDirection != Vector3.zero) _modelo.rotation = Quaternion.LookRotation(moveDirection);
+
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
             if (controller.isGrounded)
             {
+                /* 
                 // We are grounded, so recalculate
                 // move direction directly from axes
                 moveDirection = new Vector3(mHorizaontal, 0.0f, mVertical);
@@ -50,6 +56,7 @@ public class PlayerMovimentController : MonoBehaviour
 
                 moveDirection = transform.TransformDirection(moveDirection);
                 moveDirection *= speed;
+                */
                 if (Saltar)
                 {
                     moveDirection.y = jumpSpeed;
