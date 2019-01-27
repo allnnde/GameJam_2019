@@ -15,12 +15,8 @@ public class PushObjectController : MonoBehaviour
         //Debug.Log(other.tag);
         if (other.CompareTag("Pushable") && Input.GetKeyDown(KeyCode.E))
         {
-            var rb = other.GetComponent<Rigidbody>();
-            rb.isKinematic= false;
-            rb.useGravity = true;            
-            var empuje = transform.GetChild(0).forward;
-            rb.AddForce(empuje * 10);
-
+            var anim = other.GetComponent<Animation>();
+            anim.Play();
             _anim.SetTrigger("UsingSkill");
         }
     }
